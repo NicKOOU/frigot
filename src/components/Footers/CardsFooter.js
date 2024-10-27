@@ -1,24 +1,5 @@
-/*!
-
-=========================================================
-* Argon Design System React - v1.1.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-design-system-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-/*eslint-disable*/
 import React from "react";
 import { Link } from "react-router-dom";
-// reactstrap components
 import {
   Button,
   Card,
@@ -34,27 +15,81 @@ import {
 
 class CardsFooter extends React.Component {
   render() {
+    // Styles en ligne
+    const footerStyle = {
+      background: "rgba(255, 255, 255, 0.85)",
+      backdropFilter: "blur(10px)",
+      padding: "2rem 0",
+      borderTop: "1px solid #e0e0e0",
+    };
+
+    const frostCardStyle = {
+      overflow: "hidden",
+      borderRadius: "12px",
+    };
+
+    const frostImgStyle = {
+      transition: "transform 0.4s ease",
+      width: "100%",
+    };
+
+    const frostButtonStyle = {
+      background: "rgba(173, 216, 230, 0.3)",
+      border: "1px solid #87cefa",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+      transition: "all 0.3s ease",
+    };
+
+    const frostIconStyle = {
+      color: "#fff",
+    };
+
+    const navLinkStyle = {
+      color: "#87cefa",
+      fontWeight: "bold",
+    };
+
+    const navLinkHoverStyle = {
+      color: "#4682b4",
+      textDecoration: "underline",
+    };
+
     return (
       <>
-        <footer className="footer has-cards">
+        <footer style={footerStyle}>
           <Container className="container-lg">
             <Row>
               <Col className="mb-5 mb-md-0" md="6">
-                <Card className="card-lift--hover shadow border-0">
-                  <Link to="/landing-page">
+                <Card style={frostCardStyle} className="shadow border-0">
+                  <Link to="/services">
                     <CardImg
-                      alt="..."
-                      src={require("assets/img/theme/landing.jpg")}
+                      alt="泰州优库冷库设备有限公司 - Services"
+                      src="https://www.techni-contact.com/ressources/images/produits/zoom/installation-chambre-froide-11266665-2.jpg"
+                      style={frostImgStyle}
+                      className="frost-img"
+                      onMouseOver={(e) =>
+                        (e.currentTarget.style.transform = "scale(1.1)")
+                      }
+                      onMouseOut={(e) =>
+                        (e.currentTarget.style.transform = "scale(1)")
+                      }
                     />
                   </Link>
                 </Card>
               </Col>
               <Col className="mb-5 mb-lg-0" md="6">
-                <Card className="card-lift--hover shadow border-0">
-                  <Link to="/profile-page">
+                <Card style={frostCardStyle} className="shadow border-0">
+                  <Link to="/about">
                     <CardImg
-                      alt="..."
-                      src={require("assets/img/theme/profile.jpg")}
+                      alt="泰州优库冷库设备有限公司 - About Us"
+                      src="https://le-de.cdn-website.com/c8ad0579cbe64e9ca3c8aca36b2672fd/dms3rep/multi/opt/d536a3ec2a354f0cbd8db1f9c0737537-640w.jpg"
+                      style={frostImgStyle}
+                      onMouseOver={(e) =>
+                        (e.currentTarget.style.transform = "scale(1.1)")
+                      }
+                      onMouseOut={(e) =>
+                        (e.currentTarget.style.transform = "scale(1)")
+                      }
                     />
                   </Link>
                 </Card>
@@ -65,68 +100,81 @@ class CardsFooter extends React.Component {
             <Row className="row-grid align-items-center my-md">
               <Col lg="6">
                 <h3 className="text-primary font-weight-light mb-2">
-                  Thank you for supporting us!
+                  Merci pour votre confiance !
                 </h3>
                 <h4 className="mb-0 font-weight-light">
-                  Let's get in touch on any of these platforms.
+                  Restons connectés pour vous offrir le meilleur service.
                 </h4>
               </Col>
               <Col className="text-lg-center btn-wrapper" lg="6">
                 <Button
+                  style={frostButtonStyle}
                   className="btn-icon-only rounded-circle"
-                  color="twitter"
-                  href="https://twitter.com/creativetim"
-                  id="tooltip475038074"
+                  href="https://www.facebook.com/cooltechsolutions"
+                  id="tooltipFacebook"
                   target="_blank"
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.background = "#87cefa";
+                    e.currentTarget.style.transform = "scale(1.1)";
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.background =
+                      "rgba(173, 216, 230, 0.3)";
+                    e.currentTarget.style.transform = "scale(1)";
+                  }}
                 >
                   <span className="btn-inner--icon">
-                    <i className="fa fa-twitter" />
+                    <i className="fa fa-facebook-square" style={frostIconStyle} />
                   </span>
                 </Button>
-                <UncontrolledTooltip delay={0} target="tooltip475038074">
-                  Follow us
+                <UncontrolledTooltip delay={0} target="tooltipFacebook">
+                  Suivez-nous sur Facebook
                 </UncontrolledTooltip>
                 <Button
-                  className="btn-icon-only rounded-circle ml-1"
-                  color="facebook"
-                  href="https://www.facebook.com/creativetim"
-                  id="tooltip837440414"
+                  style={{ ...frostButtonStyle, marginLeft: "0.5rem" }}
+                  className="btn-icon-only rounded-circle"
+                  href="https://www.instagram.com/cooltechsolutions"
+                  id="tooltipInstagram"
                   target="_blank"
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.background = "#87cefa";
+                    e.currentTarget.style.transform = "scale(1.1)";
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.background =
+                      "rgba(173, 216, 230, 0.3)";
+                    e.currentTarget.style.transform = "scale(1)";
+                  }}
                 >
                   <span className="btn-inner--icon">
-                    <i className="fa fa-facebook-square" />
+                    <i className="fa fa-instagram" style={frostIconStyle} />
                   </span>
                 </Button>
-                <UncontrolledTooltip delay={0} target="tooltip837440414">
-                  Like us
+                <UncontrolledTooltip delay={0} target="tooltipInstagram">
+                  Suivez-nous sur Instagram
                 </UncontrolledTooltip>
                 <Button
-                  className="btn-icon-only rounded-circle ml-1"
-                  color="dribbble"
-                  href="https://dribbble.com/creativetim"
-                  id="tooltip829810202"
+                  style={{ ...frostButtonStyle, marginLeft: "0.5rem" }}
+                  className="btn-icon-only rounded-circle"
+                  href="https://www.linkedin.com/company/cooltechsolutions"
+                  id="tooltipLinkedin"
                   target="_blank"
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.background = "#87cefa";
+                    e.currentTarget.style.transform = "scale(1.1)";
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.background =
+                      "rgba(173, 216, 230, 0.3)";
+                    e.currentTarget.style.transform = "scale(1)";
+                  }}
                 >
                   <span className="btn-inner--icon">
-                    <i className="fa fa-dribbble" />
+                    <i className="fa fa-linkedin" style={frostIconStyle} />
                   </span>
                 </Button>
-                <UncontrolledTooltip delay={0} target="tooltip829810202">
-                  Follow us
-                </UncontrolledTooltip>
-                <Button
-                  className="btn-icon-only rounded-circle ml-1"
-                  color="github"
-                  href="https://github.com/creativetimofficial"
-                  id="tooltip495507257"
-                  target="_blank"
-                >
-                  <span className="btn-inner--icon">
-                    <i className="fa fa-github" />
-                  </span>
-                </Button>
-                <UncontrolledTooltip delay={0} target="tooltip495507257">
-                  Star on Github
+                <UncontrolledTooltip delay={0} target="tooltipLinkedin">
+                  Connectez-vous sur LinkedIn
                 </UncontrolledTooltip>
               </Col>
             </Row>
@@ -134,48 +182,57 @@ class CardsFooter extends React.Component {
             <Row className="align-items-center justify-content-md-between">
               <Col md="6">
                 <div className="copyright">
-                  © {new Date().getFullYear()}{" "}
-                  <a
-                    href="https://www.creative-tim.com?ref=adsr-footer"
-                    target="_blank"
-                  >
-                    Creative Tim
-                  </a>
-                  .
+                  © {new Date().getFullYear()} 泰州优库冷库设备有限公司. Tous droits réservés.
                 </div>
               </Col>
               <Col md="6">
                 <Nav className="nav-footer justify-content-end">
                   <NavItem>
                     <NavLink
-                      href="https://www.creative-tim.com?ref=adsr-footer"
-                      target="_blank"
+                      to="/about"
+                      tag={Link}
+                      style={navLinkStyle}
+                      onMouseOver={(e) =>
+                        (e.currentTarget.style = navLinkHoverStyle)
+                      }
                     >
-                      Creative Tim
+                      À propos
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href="https://www.creative-tim.com/presentation?ref=adsr-footer"
-                      target="_blank"
+                      to="/services"
+                      tag={Link}
+                      style={navLinkStyle}
+                      onMouseOver={(e) =>
+                        (e.currentTarget.style = navLinkHoverStyle)
+                      }
                     >
-                      About Us
+                      Nos Services
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href="http://blog.creative-tim.com?ref=adsr-footer"
-                      target="_blank"
+                      to="/contact"
+                      tag={Link}
+                      style={navLinkStyle}
+                      onMouseOver={(e) =>
+                        (e.currentTarget.style = navLinkHoverStyle)
+                      }
                     >
-                      Blog
+                      Contact
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href="https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md"
-                      target="_blank"
+                      to="/privacy-policy"
+                      tag={Link}
+                      style={navLinkStyle}
+                      onMouseOver={(e) =>
+                        (e.currentTarget.style = navLinkHoverStyle)
+                      }
                     >
-                      MIT License
+                      Politique de confidentialité
                     </NavLink>
                   </NavItem>
                 </Nav>
